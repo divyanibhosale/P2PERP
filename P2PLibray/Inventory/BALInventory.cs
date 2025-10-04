@@ -522,7 +522,7 @@ namespace P2PLibray.Inventory
                     {
                         BinCode = dr["BinCode"].ToString(),
                         BinName = dr["BinName"].ToString(),
-                        CurrentItems = dr["CurrentItems"].ToString()
+                        CurrentItems = dr["QuantityStored"].ToString()
 
                     };
 
@@ -914,7 +914,8 @@ namespace P2PLibray.Inventory
             SaveGR.Add("@Flag", "SaveIssueDetailDRB");
             SaveGR.Add("@IssueCode", model.IssueCode);
             SaveGR.Add("@ItemCode", model.ItemCode);
-            SaveGR.Add("@Quantity", model.Quantity.ToString());
+            SaveGR.Add("@BinCode", model.Bincode);
+            SaveGR.Add("@Quantity", model.Quantity);
 
             await obj.ExecuteStoredProcedure("InventoryProcedure", SaveGR);
         }
