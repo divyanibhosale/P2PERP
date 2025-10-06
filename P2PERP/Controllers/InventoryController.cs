@@ -203,7 +203,7 @@ namespace P2PERP.Controllers
         [HttpGet]
         public async Task<JsonResult> GetBinBasedOnItemDRB(string itemcode)
         {
-            var bins = await bal.GetBins(itemcode);
+            var bins = await bal.GetBinsDRB(itemcode);
             return Json(bins,JsonRequestBehavior.AllowGet);
         }
 

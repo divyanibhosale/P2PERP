@@ -507,7 +507,12 @@ namespace P2PLibray.Inventory
             return dr;
         }
 
-        public async Task<List<InventoryBinDRB>> GetBins(string itemcode)
+
+        /// <summary>
+        /// Asynchronously retrieves a list of inventory bins for the given item code.
+        /// Returns a list of InventoryBinDRB objects or null if no bins are found.
+        /// </summary>
+        public async Task<List<InventoryBinDRB>> GetBinsDRB(string itemcode)
         {
             List<InventoryBinDRB> inventoryBinDRBs = new List<InventoryBinDRB>();
             Dictionary<string, string> param = new Dictionary<string, string>();
@@ -2186,7 +2191,7 @@ namespace P2PLibray.Inventory
 
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception e)
             {
                 // Yahan logging kar sakte ho
                 return false;
